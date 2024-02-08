@@ -19,3 +19,11 @@ form {
   margin-right: 5px;
   width: 80%;
 }
+#error {
+  text-align: center;
+}
+#error p {
+  color: red;
+  font-size: 8pt;
+  font-weight: 700;
+}

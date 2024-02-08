@@ -57,7 +57,9 @@ function initBinding() {
   const addressElement = document.getElementById(
     "address"
   )! as HTMLInputElement;
-  formElement.addEventListener("submit", (event) => {
+  const errorElement = document.querySelector("#error p")!;
+
+  formElement.addEventListener("submit", (event: Event) => {
     event.preventDefault();
 
     const address = addressElement.value;
@@ -67,12 +69,13 @@ function initBinding() {
       .then((response: GoogleResponse) => {
         if (response.data.status === "OK") {
           // handle success
+          errorElement.textContent = "";
           const position = response.data.results[0].geometry
             .location as Position;
           const formatted_address = response.data.results[0].formatted_address;
           addMarker(position, formatted_address);
         } else {
-          alert("No location found");
+          errorElement.textContent = `Cannot find ${address}`;
         }
       })
       .catch((error) => {
