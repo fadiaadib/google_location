@@ -63,7 +63,7 @@ function initBinding() {
     event.preventDefault();
 
     const address = addressElement.value;
-    const uri = `${GOOGLE_URI}?address=${address}&key=${GOOGLE_KEY}`;
+    const uri = `${GOOGLE_URI}?address=${encodeURI(address)}&key=${GOOGLE_KEY}`;
     axios
       .get(uri)
       .then((response: GoogleResponse) => {
@@ -75,7 +75,7 @@ function initBinding() {
           const formatted_address = response.data.results[0].formatted_address;
           addMarker(position, formatted_address);
         } else {
-          errorElement.textContent = `Cannot find ${address}`;
+          errorElement.textContent = `Cannot find "${address}"`;
         }
       })
       .catch((error) => {
