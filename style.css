@@ -1,0 +1,21 @@
+html {
+  font-family: sans-serif;
+}
+#map {
+  margin: 1rem auto;
+  border: 5px solid #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 90%;
+  height: 70vh;
+  text-align: center;
+}
+form {
+  margin: 1rem auto;
+  text-align: center;
+}
+#address {
+  margin-right: 5px;
+  width: 80%;
+}
