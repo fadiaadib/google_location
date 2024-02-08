@@ -12,6 +12,7 @@
   "author": "Fadi Adib",
   "license": "ISC",
   "devDependencies": {
+    "@types/google.maps": "^3.55.2",
     "ts-loader": "^9.5.1",
     "typescript": "^5.3.3",
     "webpack": "^5.90.1",
